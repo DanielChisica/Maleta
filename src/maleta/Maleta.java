@@ -69,13 +69,13 @@ public class Maleta {
         
         maleta1.retirar(002);
         
-        
+        /*
         Item consulta1[]=maleta1.consultar();
         
         for (int i = 0; i <consulta1.length; i++) {
             System.out.println(consulta1[i]+ "i");
         }
-        
+        */
 
         /*
         Item consulta2[]=maleta1.consultar();
