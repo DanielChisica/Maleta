@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package maleta;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,14 +13,16 @@ package maleta;
 public class Maleta {
     
     public static void main(String[] args) throws Exception {
-        Maleta maleta1=new Maleta();
+       
         
         /*
+         Maleta maleta1=new Maleta();
         Armas arma1=new Armas(34, "uzi", 001);
         Medicinas med1=new Medicinas("yerbaroja", 021);
         ObjetosClaves obj1=new ObjetosClaves("medal", 034);
         */
         
+        /*
         Item item1= new Item("shotgun", 021);
         Item item2= new Item("Yerba roja", 022);
         Item item3= new Item("Sapphire", 045);
@@ -41,41 +44,23 @@ public class Maleta {
         Item item19= new Item("glasses", 003);
         Item item20= new Item("grenade launcher", 002);
         Item item21= new Item("Tape", 001);
+        Armas arma1= new Armas(34, "gaga", 03);
                 
         
         
-        
-        
-        maleta1.almacenar(item1);
-        maleta1.almacenar(item2);
-        maleta1.almacenar(item3);
-        maleta1.almacenar(item4);
-        maleta1.almacenar(item5);
-        maleta1.almacenar(item6);
-        maleta1.almacenar(item7);
-        maleta1.almacenar(item8);
-        maleta1.almacenar(item9);
-        maleta1.almacenar(item10);
-        maleta1.almacenar(item11);
-        maleta1.almacenar(item12);
-        maleta1.almacenar(item13);
-        maleta1.almacenar(item14);
-        maleta1.almacenar(item15);
-        maleta1.almacenar(item16);
-        maleta1.almacenar(item17);
-        maleta1.almacenar(item18);
-        maleta1.almacenar(item19);
-        maleta1.almacenar(item20);
-        
-        maleta1.retirar(002);
-        
-        /*
         Item consulta1[]=maleta1.consultar();
         
         for (int i = 0; i <consulta1.length; i++) {
             System.out.println(consulta1[i]+ "i");
         }
+        
+        maleta1.almacenar(item1);
+        maleta1.almacenar(arma1);
+        
         */
+        
+        
+        
 
         /*
         Item consulta2[]=maleta1.consultar();
@@ -89,10 +74,11 @@ public class Maleta {
     
     private Item arreglo[]= new Item[20];
     
+    private Item clon[]= new Item[20];
+    
     public Item[] consultar(){
-        Item clon[]=new Item[20];
         for (int i = 0; i <clon.length; i++) {
-            clon[i]=arreglo[i].clone();
+            clon=arreglo.clone();
         }
         return clon;
     }
@@ -104,6 +90,7 @@ public class Maleta {
             if(arreglo[j].getId()==id){
                 arreglo[j]=null;
                 flag=true;
+                System.out.println("Item retirado con exito");
                 break;
             }
             
@@ -131,6 +118,7 @@ public class Maleta {
             }
         }
         if(flag==false){
+        JOptionPane.showMessageDialog(null, "La maleta esta llena");
         throw new Exception("La maleta esta llena");
         }
     }

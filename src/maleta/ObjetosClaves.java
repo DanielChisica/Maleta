@@ -14,9 +14,12 @@ public class ObjetosClaves extends Item{
     
     private String descripcion;
 
-    public ObjetosClaves(String Nombre, int id) {
+    public ObjetosClaves(String descripcion, String Nombre, int id) {
         super(Nombre, id);
+        this.descripcion = descripcion;
     }
+
+    
 
     public String getDescripcion() {
         return descripcion;
@@ -27,7 +30,7 @@ public class ObjetosClaves extends Item{
     }
     @Override
     public ObjetosClaves clone(){
-        return new ObjetosClaves(this.descripcion, getId());
+        return new ObjetosClaves(this.descripcion,getNombre(), getId());
     }
     
 }
