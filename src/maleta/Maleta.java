@@ -7,8 +7,10 @@ package maleta;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author EAN
+ *La clase maleta contiene los metodos necesarios para que funcione este objeto
+ * como unidad de almacenamiento
+ * 
+ * @author Daniel Jimenez
  */
 public class Maleta {
     
@@ -76,6 +78,11 @@ public class Maleta {
     
     private Item clon[]= new Item[20];
     
+    /**
+     * Este metodo permite clonar el arreglo que contiene los items
+     * 
+     * @return Arreglo de tipo item consultado, es decir el clon 
+     */
     public Item[] consultar(){
         for (int i = 0; i <clon.length; i++) {
             clon=arreglo.clone();
@@ -83,6 +90,14 @@ public class Maleta {
         return clon;
     }
    
+    /**
+     * Retira un objeto de tipo item del arreglo que los contiene.
+     * 
+     * @param id Tipo de dato int que representa el numero de identificacion de
+     * un item
+     * @throws Exception Exception al intentar retirar un item que no se encuentra
+     * en el arreglo
+     */
     public void retirar(int id) throws Exception{
         boolean flag;
         flag=false;
@@ -104,6 +119,12 @@ public class Maleta {
         }
     }
     
+    /**
+     * Almacena un objeto de tipo item en el arreglo que los contiene
+     * 
+     * @param item Objeto de tipo item que va a ser almacenado en el arreglo
+     * @throws Exception Excepcion al introducir un item con el arreglo lleno
+     */
     public void almacenar(Item item)throws Exception{
         boolean flag;
         flag=false;
@@ -122,11 +143,19 @@ public class Maleta {
         throw new Exception("La maleta esta llena");
         }
     }
-
+    
+    /**
+     * Retorna el arreglo de items
+     * @return arreglo de items
+     */
     public Item[] getArreglo() {
         return arreglo;
     }
-
+    
+    /**
+     * Modifica el arreglo con los items
+     * @param arreglo arreglo de items 
+     */
     public void setArreglo(Item[] arreglo) {
         this.arreglo = arreglo;
     }

@@ -15,8 +15,9 @@ import maleta.Maleta;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author danie_000
+ *Clase que contiene la interfaz gráfica de la maleta+-
+ * 
+ * @author Daniel Jimenez
  */
 public class NewJFrame extends javax.swing.JFrame {
 
@@ -1147,7 +1148,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    /**
+     * Esta clase permite introducir los items en el arreglo.
+     * 
+     * @param evt Evento de clic sobre el boton
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
@@ -1227,7 +1233,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
-
+    
+    /**
+     * Este metodo permite retornar un item del arreglo de items
+     * dado un id por un campo de texto
+     * 
+     * @param evt Evento de click sobre el boton
+     */
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         
         try {
@@ -1241,6 +1253,11 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    /**
+     * Consulta los items que se encuentran en el arreglo
+     * 
+     * @param evt Evento de click sobre el boton
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here
         Item consulta[]=maleta1.consultar();
