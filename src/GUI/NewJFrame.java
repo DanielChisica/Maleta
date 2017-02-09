@@ -1261,91 +1261,85 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here
         Item consulta[]=maleta1.consultar();
-        /*
-            if(consulta[0].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                consulta[0].get
-                jTextField7.setText(consulta[0].getId());
-                
+        
+            if(consulta[0] instanceof Armas){
+                jTextField7.setText(String.valueOf(((Armas)consulta[0]).getId()));
             }
-          */  
+          
             if(consulta[1].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField10.setText(String.valueOf(((Armas)consulta[1]).getDmg()));
             }
         
             if(consulta[2].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField13.setText(String.valueOf(((Armas)consulta[2]).getDmg()));
             }
-        
-            if(consulta[2].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
-            }
-        
+     
             if(consulta[3].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField16.setText(String.valueOf(((Armas)consulta[3]).getDmg()));
             }
         
             if(consulta[4].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField19.setText(String.valueOf(((Armas)consulta[4]).getDmg()));
             }
         
             if(consulta[5].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField22.setText(String.valueOf(((Armas)consulta[5]).getDmg()));
             }
         
             if(consulta[6].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField25.setText(String.valueOf(((Armas)consulta[6]).getDmg()));
             }
         
             if(consulta[7].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField28.setText(String.valueOf(((Armas)consulta[7]).getDmg()));
             }
         
             if(consulta[8].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField31.setText(String.valueOf(((Armas)consulta[8]).getDmg()));
             }
         
             if(consulta[9].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField34.setText(String.valueOf(((Armas)consulta[9]).getDmg()));
             }
         
             if(consulta[10].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField58.setText(String.valueOf(((Armas)consulta[10]).getDmg()));
             }
         
             if(consulta[11].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField61.setText(String.valueOf(((Armas)consulta[11]).getDmg()));
             }
         
             if(consulta[12].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField64.setText(String.valueOf(((Armas)consulta[12]).getDmg()));
             }
         
             if(consulta[13].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField67.setText(String.valueOf(((Armas)consulta[13]).getDmg()));
             }
         
             if(consulta[14].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField70.setText(String.valueOf(((Armas)consulta[14]).getDmg()));
             }
         
             if(consulta[15].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField43.setText(String.valueOf(((Armas)consulta[15]).getDmg()));
             }
         
             if(consulta[16].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField46.setText(String.valueOf(((Armas)consulta[16]).getDmg()));
             }
         
             if(consulta[17].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField49.setText(String.valueOf(((Armas)consulta[17]).getDmg()));
             }
         
             if(consulta[18].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField52.setText(String.valueOf(((Armas)consulta[18]).getDmg()));
             }
         
             if(consulta[19].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                
+                jTextField55.setText(String.valueOf(((Armas)consulta[19]).getDmg()));
             }
             
             
@@ -1354,84 +1348,84 @@ public class NewJFrame extends javax.swing.JFrame {
         
         
         
-            if (consulta[0].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[0] instanceof ObjetosClaves){
+                jTextArea1.setText(String.valueOf(((ObjetosClaves)consulta[0]).getDescripcion()));
             }
             
-            if (consulta[1].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[1] instanceof ObjetosClaves){
+                jTextArea2.setText(String.valueOf(((ObjetosClaves)consulta[1]).getDescripcion()));
             }
             
-            if (consulta[2].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[2] instanceof ObjetosClaves){
+                jTextArea3.setText(String.valueOf(((ObjetosClaves)consulta[2]).getDescripcion()));
             }
             
-            if (consulta[3].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[3] instanceof ObjetosClaves){
+                jTextArea4.setText(String.valueOf(((ObjetosClaves)consulta[3]).getDescripcion()));
             }
             
-            if (consulta[4].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[4] instanceof ObjetosClaves){
+                jTextArea5.setText(String.valueOf(((ObjetosClaves)consulta[4]).getDescripcion()));
             }
             
-            if (consulta[5].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[5] instanceof ObjetosClaves){
+                jTextArea6.setText(String.valueOf(((ObjetosClaves)consulta[5]).getDescripcion()));
             }
             
-            if (consulta[6].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[6] instanceof ObjetosClaves){
+                jTextArea7.setText(String.valueOf(((ObjetosClaves)consulta[6]).getDescripcion()));
             }
             
-            if (consulta[7].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[7] instanceof ObjetosClaves){
+                jTextArea8.setText(String.valueOf(((ObjetosClaves)consulta[7]).getDescripcion()));
             }
             
-            if (consulta[8].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[8] instanceof ObjetosClaves){
+                jTextArea9.setText(String.valueOf(((ObjetosClaves)consulta[8]).getDescripcion()));
             }
             
-            if (consulta[9].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[9] instanceof ObjetosClaves){
+                jTextArea10.setText(String.valueOf(((ObjetosClaves)consulta[9]).getDescripcion()));
             }
             
-            if (consulta[10].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[10] instanceof ObjetosClaves){
+                jTextArea11.setText(String.valueOf(((ObjetosClaves)consulta[10]).getDescripcion()));
             }
             
-            if (consulta[11].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[11] instanceof ObjetosClaves){
+                jTextArea12.setText(String.valueOf(((ObjetosClaves)consulta[11]).getDescripcion()));
             }
             
-            if (consulta[12].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[12] instanceof ObjetosClaves){
+                jTextArea13.setText(String.valueOf(((ObjetosClaves)consulta[12]).getDescripcion()));
             }
             
-            if (consulta[13].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[13] instanceof ObjetosClaves){
+                jTextArea14.setText(String.valueOf(((ObjetosClaves)consulta[13]).getDescripcion()));
             }
             
-            if (consulta[14].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[14] instanceof ObjetosClaves){
+                jTextArea15.setText(String.valueOf(((ObjetosClaves)consulta[14]).getDescripcion()));
             }
             
-            if (consulta[15].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[15] instanceof ObjetosClaves){
+                jTextArea16.setText(String.valueOf(((ObjetosClaves)consulta[15]).getDescripcion()));
             }
             
-            if (consulta[16].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[16] instanceof ObjetosClaves){
+                jTextArea17.setText(String.valueOf(((ObjetosClaves)consulta[16]).getDescripcion()));
             }
             
-            if (consulta[17].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[17] instanceof ObjetosClaves){
+                jTextArea18.setText(String.valueOf(((ObjetosClaves)consulta[17]).getDescripcion()));
             }
             
-            if (consulta[18].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[18] instanceof ObjetosClaves){
+                jTextArea19.setText(String.valueOf(((ObjetosClaves)consulta[18]).getDescripcion()));
             }
             
-            if (consulta[19].getClass().getSimpleName().equalsIgnoreCase(objprueba.getClass().getSimpleName())){
-                
+            if (consulta[19] instanceof ObjetosClaves){
+                jTextArea20.setText(String.valueOf(((ObjetosClaves)consulta[19]).getDescripcion()));
             }
             
             
