@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -25,11 +25,7 @@ public class NewJFrame extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     Maleta maleta1=new Maleta();
-    Armas armaprueba=new Armas(11, "prueba", 2);
-    ObjetosClaves objprueba= new ObjetosClaves("prueba", "prueba", 69);
-    
-    
-    
+
     public NewJFrame() {
         initComponents();
     }
@@ -1104,10 +1100,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                             .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(119, 119, 119)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton4))))
+                                .addGap(127, 127, 127)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4)
+                                    .addComponent(jButton1))))
                         .addGap(0, 23, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -1147,23 +1143,47 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        maleta1=new Maleta();
+        jButton4ActionPerformed(evt);
     }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
-     * Esta clase permite introducir los items en el arreglo.
+     * Este metodo permite introducir los items en el arreglo.
      * 
      * @param evt Evento de clic sobre el boton
      */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-
+        
+        
         String i3="Description";
         String i4="Dmg";
         String i5="# Id";
         String i6="Item name";
+        byte alerta=0;
+        int ids[]=new int[20];
+        
+        for (int i = 0; i < maleta1.getArreglo().length; i++) {
+            try {
+                ids[i]=maleta1.getArreglo()[i].getId();
+            } catch (Exception e) {
+            }  
+        }
         
         
-        if (jTextField2.getText().equals(i3) || jTextField2.getText().equals(i4) || jTextField2.getText().equals(i5) || jTextField2.getText().equals(i6)||
+        for (int i = 0; i <ids.length; i++) {
+            if(Integer.parseInt(jTextField3.getText())==ids[i]){
+                alerta=1;
+                break;
+            }
+        }
+        
+        if(alerta==1){
+            JOptionPane.showMessageDialog(null, "Introduzca un Id diferente");
+        }
+        
+        else{
+            if (jTextField2.getText().equals(i3) || jTextField2.getText().equals(i4) || jTextField2.getText().equals(i5) || jTextField2.getText().equals(i6)||
                 jTextField3.getText().equals(i3) || jTextField3.getText().equals(i4) || jTextField3.getText().equals(i5) || jTextField3.getText().equals(i6)||
                 jTextField4.getText().equals(i3) || jTextField4.getText().equals(i4) || jTextField4.getText().equals(i5) || jTextField4.getText().equals(i6)||
                 jTextField5.getText().equals(i3) || jTextField5.getText().equals(i4) || jTextField5.getText().equals(i5) || jTextField5.getText().equals(i6)){
@@ -1216,9 +1236,7 @@ public class NewJFrame extends javax.swing.JFrame {
                               );
           }
         }
-        
-        
-        
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -1262,237 +1280,471 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here
         Item consulta[]=maleta1.consultar();
         
+            
             if(consulta[0] instanceof Armas){
-                jTextField7.setText(String.valueOf(((Armas)consulta[0]).getId()));
+                jTextField7.setText(String.valueOf(((Armas)consulta[0]).getDmg()));
             }
-          
-            if(consulta[1].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                jTextField10.setText(String.valueOf(((Armas)consulta[1]).getDmg()));
-            }
-        
-            if(consulta[2].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
-                jTextField13.setText(String.valueOf(((Armas)consulta[2]).getDmg()));
+            else{
+                jTextField7.setText("");
             }
      
-            if(consulta[3].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[1] instanceof Armas){
+                jTextField10.setText(String.valueOf(((Armas)consulta[1]).getDmg()));
+            }
+            else{
+                jTextField10.setText("");
+            }
+        
+            if(consulta[2] instanceof Armas){
+                jTextField13.setText(String.valueOf(((Armas)consulta[2]).getDmg()));
+            }
+            else{
+                jTextField13.setText("");
+            }
+     
+            if(consulta[3] instanceof Armas){
                 jTextField16.setText(String.valueOf(((Armas)consulta[3]).getDmg()));
             }
-        
-            if(consulta[4].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            else{
+                jTextField16.setText("");
+            }
+                   
+            if(consulta[4] instanceof Armas){
                 jTextField19.setText(String.valueOf(((Armas)consulta[4]).getDmg()));
             }
+            else{
+                jTextField19.setText("");
+            }
         
-            if(consulta[5].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[5] instanceof Armas){
                 jTextField22.setText(String.valueOf(((Armas)consulta[5]).getDmg()));
             }
-        
-            if(consulta[6].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            else{
+                jTextField22.setText("");
+            }
+            
+            if(consulta[6] instanceof Armas){
                 jTextField25.setText(String.valueOf(((Armas)consulta[6]).getDmg()));
             }
+            else{
+                jTextField25.setText("");
+            }
         
-            if(consulta[7].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[7] instanceof Armas){
                 jTextField28.setText(String.valueOf(((Armas)consulta[7]).getDmg()));
             }
+            else{
+                jTextField28.setText("");
+            }
         
-            if(consulta[8].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[8] instanceof Armas){
                 jTextField31.setText(String.valueOf(((Armas)consulta[8]).getDmg()));
             }
+            else{
+                jTextField31.setText("");
+            }
         
-            if(consulta[9].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[9] instanceof Armas){
                 jTextField34.setText(String.valueOf(((Armas)consulta[9]).getDmg()));
             }
+            else{
+                jTextField34.setText("");
+            }
         
-            if(consulta[10].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[10] instanceof Armas){
                 jTextField58.setText(String.valueOf(((Armas)consulta[10]).getDmg()));
             }
+            else{
+                jTextField58.setText("");
+            }
         
-            if(consulta[11].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[11] instanceof Armas){
                 jTextField61.setText(String.valueOf(((Armas)consulta[11]).getDmg()));
             }
+            else{
+                jTextField61.setText("");
+            }
         
-            if(consulta[12].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[12] instanceof Armas){
                 jTextField64.setText(String.valueOf(((Armas)consulta[12]).getDmg()));
             }
+            else{
+                jTextField64.setText("");
+            }
         
-            if(consulta[13].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[13] instanceof Armas){
                 jTextField67.setText(String.valueOf(((Armas)consulta[13]).getDmg()));
             }
-        
-            if(consulta[14].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            else{
+                jTextField67.setText("");
+            }
+            
+            if(consulta[14] instanceof Armas){
                 jTextField70.setText(String.valueOf(((Armas)consulta[14]).getDmg()));
             }
+            else{
+                jTextField70.setText("");
+            }
         
-            if(consulta[15].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[15] instanceof Armas){
                 jTextField43.setText(String.valueOf(((Armas)consulta[15]).getDmg()));
             }
+            else{
+                jTextField43.setText("");
+            }
         
-            if(consulta[16].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[16] instanceof Armas){
                 jTextField46.setText(String.valueOf(((Armas)consulta[16]).getDmg()));
             }
+            else{
+                jTextField46.setText("");
+            }
         
-            if(consulta[17].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[17] instanceof Armas){
                 jTextField49.setText(String.valueOf(((Armas)consulta[17]).getDmg()));
             }
+            else{
+                jTextField49.setText("");
+            }
         
-            if(consulta[18].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[18] instanceof Armas){
                 jTextField52.setText(String.valueOf(((Armas)consulta[18]).getDmg()));
             }
+            else{
+                jTextField52.setText("");
+            }
         
-            if(consulta[19].getClass().getSimpleName().equalsIgnoreCase(armaprueba.getClass().getSimpleName())){
+            if(consulta[19] instanceof Armas){
                 jTextField55.setText(String.valueOf(((Armas)consulta[19]).getDmg()));
+            }
+            else{
+                jTextField55.setText("");
             }
             
             
         
-            
-        
-        
-        
+           
             if (consulta[0] instanceof ObjetosClaves){
                 jTextArea1.setText(String.valueOf(((ObjetosClaves)consulta[0]).getDescripcion()));
             }
-            
+            else{
+                jTextArea1.setText("");
+            }
+          
             if (consulta[1] instanceof ObjetosClaves){
                 jTextArea2.setText(String.valueOf(((ObjetosClaves)consulta[1]).getDescripcion()));
+            }
+            else{
+                jTextArea2.setText("");
             }
             
             if (consulta[2] instanceof ObjetosClaves){
                 jTextArea3.setText(String.valueOf(((ObjetosClaves)consulta[2]).getDescripcion()));
             }
+            else{
+                jTextArea3.setText("");
+            }
             
             if (consulta[3] instanceof ObjetosClaves){
                 jTextArea4.setText(String.valueOf(((ObjetosClaves)consulta[3]).getDescripcion()));
+            }
+            else{
+                jTextArea4.setText("");
             }
             
             if (consulta[4] instanceof ObjetosClaves){
                 jTextArea5.setText(String.valueOf(((ObjetosClaves)consulta[4]).getDescripcion()));
             }
+            else{
+                jTextArea5.setText("");
+            }
             
             if (consulta[5] instanceof ObjetosClaves){
                 jTextArea6.setText(String.valueOf(((ObjetosClaves)consulta[5]).getDescripcion()));
+            }
+            else{
+                jTextArea6.setText("");
             }
             
             if (consulta[6] instanceof ObjetosClaves){
                 jTextArea7.setText(String.valueOf(((ObjetosClaves)consulta[6]).getDescripcion()));
             }
+            else{
+                jTextArea7.setText("");
+            }
             
             if (consulta[7] instanceof ObjetosClaves){
                 jTextArea8.setText(String.valueOf(((ObjetosClaves)consulta[7]).getDescripcion()));
+            }
+            else{
+                jTextArea8.setText("");
             }
             
             if (consulta[8] instanceof ObjetosClaves){
                 jTextArea9.setText(String.valueOf(((ObjetosClaves)consulta[8]).getDescripcion()));
             }
+            else{
+                jTextArea9.setText("");
+            }
             
             if (consulta[9] instanceof ObjetosClaves){
                 jTextArea10.setText(String.valueOf(((ObjetosClaves)consulta[9]).getDescripcion()));
             }
+            else{
+                jTextArea10.setText("");
+            }
             
             if (consulta[10] instanceof ObjetosClaves){
-                jTextArea11.setText(String.valueOf(((ObjetosClaves)consulta[10]).getDescripcion()));
+                jTextArea18.setText(String.valueOf(((ObjetosClaves)consulta[10]).getDescripcion()));
+            }
+            else{
+                jTextArea18.setText("");
             }
             
             if (consulta[11] instanceof ObjetosClaves){
-                jTextArea12.setText(String.valueOf(((ObjetosClaves)consulta[11]).getDescripcion()));
+                jTextArea19.setText(String.valueOf(((ObjetosClaves)consulta[11]).getDescripcion()));
+            }
+            else{
+                jTextArea19.setText("");
             }
             
             if (consulta[12] instanceof ObjetosClaves){
-                jTextArea13.setText(String.valueOf(((ObjetosClaves)consulta[12]).getDescripcion()));
+                jTextArea20.setText(String.valueOf(((ObjetosClaves)consulta[12]).getDescripcion()));
+            }
+            else{
+                jTextArea20.setText("");
             }
             
             if (consulta[13] instanceof ObjetosClaves){
-                jTextArea14.setText(String.valueOf(((ObjetosClaves)consulta[13]).getDescripcion()));
+                jTextArea21.setText(String.valueOf(((ObjetosClaves)consulta[13]).getDescripcion()));
+            }
+            else{
+                jTextArea21.setText("");
             }
             
             if (consulta[14] instanceof ObjetosClaves){
-                jTextArea15.setText(String.valueOf(((ObjetosClaves)consulta[14]).getDescripcion()));
+                jTextArea22.setText(String.valueOf(((ObjetosClaves)consulta[14]).getDescripcion()));
+            }
+            else{
+                jTextArea22.setText("");
             }
             
             if (consulta[15] instanceof ObjetosClaves){
-                jTextArea16.setText(String.valueOf(((ObjetosClaves)consulta[15]).getDescripcion()));
+                jTextArea13.setText(String.valueOf(((ObjetosClaves)consulta[15]).getDescripcion()));
+            }
+            else{
+                jTextArea13.setText("");
             }
             
             if (consulta[16] instanceof ObjetosClaves){
-                jTextArea17.setText(String.valueOf(((ObjetosClaves)consulta[16]).getDescripcion()));
+                jTextArea14.setText(String.valueOf(((ObjetosClaves)consulta[16]).getDescripcion()));
+            }
+            else{
+                jTextArea14.setText("");
             }
             
             if (consulta[17] instanceof ObjetosClaves){
-                jTextArea18.setText(String.valueOf(((ObjetosClaves)consulta[17]).getDescripcion()));
+                jTextArea15.setText(String.valueOf(((ObjetosClaves)consulta[17]).getDescripcion()));
+            }
+            else{
+                jTextArea15.setText("");
             }
             
             if (consulta[18] instanceof ObjetosClaves){
-                jTextArea19.setText(String.valueOf(((ObjetosClaves)consulta[18]).getDescripcion()));
+                jTextArea16.setText(String.valueOf(((ObjetosClaves)consulta[18]).getDescripcion()));
+            }
+            else{
+                jTextArea16.setText("");
             }
             
             if (consulta[19] instanceof ObjetosClaves){
-                jTextArea20.setText(String.valueOf(((ObjetosClaves)consulta[19]).getDescripcion()));
+                jTextArea17.setText(String.valueOf(((ObjetosClaves)consulta[19]).getDescripcion()));
             }
+            else{
+                jTextArea17.setText("");
+            }
+      
+      
             
-            
-        
-        
-        jTextField6.setText(consulta[0].getNombre());
-        jTextField7.setText(consulta[0].getNombre());
-        jTextField8.setText(consulta[0].getNombre());
-        jTextField9.setText(consulta[0].getNombre());
-        jTextField10.setText(consulta[0].getNombre());
-        jTextField11.setText(consulta[0].getNombre());
-        jTextField12.setText(consulta[0].getNombre());
-        jTextField13.setText(consulta[0].getNombre());
-        jTextField14.setText(consulta[0].getNombre());
-        jTextField15.setText(consulta[0].getNombre());
-        jTextField16.setText(consulta[0].getNombre());
-        jTextField17.setText(consulta[0].getNombre());
-        jTextField18.setText(consulta[0].getNombre());
-        jTextField19.setText(consulta[0].getNombre());
-        jTextField20.setText(consulta[0].getNombre());
-        jTextField21.setText(consulta[0].getNombre());
-        jTextField22.setText(consulta[0].getNombre());
-        jTextField23.setText(consulta[0].getNombre());
-        jTextField24.setText(consulta[0].getNombre());
-        jTextField25.setText(consulta[0].getNombre());
-        jTextField26.setText(consulta[0].getNombre());
-        jTextField27.setText(consulta[0].getNombre());
-        jTextField28.setText(consulta[0].getNombre());
-        jTextField29.setText(consulta[0].getNombre());
-        jTextField30.setText(consulta[0].getNombre());
-        jTextField31.setText(consulta[0].getNombre());
-        jTextField32.setText(consulta[0].getNombre());
-        jTextField33.setText(consulta[0].getNombre());
-        jTextField34.setText(consulta[0].getNombre());
-        jTextField35.setText(consulta[0].getNombre());
-        jTextField57.setText(consulta[0].getNombre());
-        jTextField58.setText(consulta[0].getNombre());
-        jTextField59.setText(consulta[0].getNombre());
-        jTextField60.setText(consulta[0].getNombre());
-        jTextField61.setText(consulta[0].getNombre());
-        jTextField62.setText(consulta[0].getNombre());
-        jTextField63.setText(consulta[0].getNombre());
-        jTextField64.setText(consulta[0].getNombre());
-        jTextField65.setText(consulta[0].getNombre());
-        jTextField66.setText(consulta[0].getNombre());
-        jTextField67.setText(consulta[0].getNombre());
-        jTextField68.setText(consulta[0].getNombre());
-        jTextField69.setText(consulta[0].getNombre());
-        jTextField70.setText(consulta[0].getNombre());
-        jTextField71.setText(consulta[0].getNombre());
-        
-        jTextField42.setText(consulta[0].getNombre());
-        jTextField43.setText(consulta[0].getNombre());
-        jTextField44.setText(consulta[0].getNombre());
-        jTextField45.setText(consulta[0].getNombre());
-        jTextField46.setText(consulta[0].getNombre());
-        jTextField47.setText(consulta[0].getNombre());
-        jTextField48.setText(consulta[0].getNombre());
-        jTextField49.setText(consulta[0].getNombre());
-        jTextField50.setText(consulta[0].getNombre());
-        jTextField51.setText(consulta[0].getNombre());
-        jTextField52.setText(consulta[0].getNombre());
-        jTextField53.setText(consulta[0].getNombre());
-        jTextField54.setText(consulta[0].getNombre());
-        jTextField55.setText(consulta[0].getNombre());
-        jTextField56.setText(consulta[0].getNombre());
-        
+      if(consulta[0]!=null){
+          jTextField6.setText(consulta[0].getNombre());
+          jTextField8.setText(String.valueOf(consulta[0].getId()));
+      }
+      else {
+          jTextField6.setText("");
+          jTextField8.setText("");
+      }
+      
+      if(consulta[1]!=null){
+          jTextField9.setText(consulta[1].getNombre());
+          jTextField11.setText(String.valueOf(consulta[1].getId()));
+      }
+      else {
+          jTextField9.setText("");
+          jTextField11.setText("");
+      }
+      
+      if(consulta[2]!=null){
+          jTextField12.setText(consulta[2].getNombre());
+          jTextField14.setText(String.valueOf(consulta[2].getId()));
+      }
+      else {
+          jTextField12.setText("");
+          jTextField14.setText("");
+      }
+      
+      if(consulta[3]!=null){
+          jTextField15.setText(consulta[3].getNombre());
+          jTextField17.setText(String.valueOf(consulta[3].getId()));
+      }
+      else {
+          jTextField15.setText("");
+          jTextField17.setText("");
+      }
+      
+      if(consulta[4]!=null){
+          jTextField18.setText(consulta[4].getNombre());
+          jTextField20.setText(String.valueOf(consulta[4].getId()));
+      }
+      else {
+          jTextField18.setText("");
+          jTextField20.setText("");
+      }
+      
+      if(consulta[5]!=null){
+          jTextField21.setText(consulta[5].getNombre());
+          jTextField23.setText(String.valueOf(consulta[5].getId()));
+      }
+      else {
+          jTextField21.setText("");
+          jTextField23.setText("");
+      }
+      
+      if(consulta[6]!=null){
+          jTextField24.setText(consulta[6].getNombre());
+          jTextField26.setText(String.valueOf(consulta[6].getId()));
+      }
+      else {
+          jTextField24.setText("");
+          jTextField26.setText("");
+      }
+      
+      if(consulta[7]!=null){
+          jTextField27.setText(consulta[7].getNombre());
+          jTextField29.setText(String.valueOf(consulta[7].getId()));
+      }
+      else {
+          jTextField27.setText("");
+          jTextField29.setText("");
+      }
+      
+      if(consulta[8]!=null){
+          jTextField30.setText(consulta[8].getNombre());
+          jTextField32.setText(String.valueOf(consulta[8].getId()));
+      }
+      else {
+          jTextField30.setText("");
+          jTextField32.setText("");
+      }
+      
+      if(consulta[9]!=null){
+          jTextField33.setText(consulta[9].getNombre());
+          jTextField35.setText(String.valueOf(consulta[9].getId()));
+      }
+      else {
+          jTextField33.setText("");
+          jTextField35.setText("");
+      }
+      
+      if(consulta[10]!=null){
+          jTextField57.setText(consulta[10].getNombre());
+          jTextField59.setText(String.valueOf(consulta[10].getId()));
+      }
+      else {
+          jTextField57.setText("");
+          jTextField59.setText("");
+      }
+      
+      if(consulta[11]!=null){
+          jTextField60.setText(consulta[11].getNombre());
+          jTextField62.setText(String.valueOf(consulta[11].getId()));
+      }
+      else {
+          jTextField60.setText("");
+          jTextField62.setText("");
+      }
+      
+      if(consulta[12]!=null){
+          jTextField63.setText(consulta[12].getNombre());
+          jTextField65.setText(String.valueOf(consulta[12].getId()));
+      }
+      else {
+          jTextField63.setText("");
+          jTextField65.setText("");
+      }
+      
+      if(consulta[13]!=null){
+          jTextField66.setText(consulta[13].getNombre());
+          jTextField68.setText(String.valueOf(consulta[13].getId()));
+      }
+      else {
+          jTextField66.setText("");
+          jTextField68.setText("");
+      }
+      
+      if(consulta[14]!=null){
+          jTextField69.setText(consulta[14].getNombre());
+          jTextField71.setText(String.valueOf(consulta[14].getId()));
+      }
+      else {
+          jTextField69.setText("");
+          jTextField71.setText("");
+      }
+      
+      if(consulta[15]!=null){
+          jTextField42.setText(consulta[15].getNombre());
+           jTextField44.setText(String.valueOf(consulta[15].getId()));
+      }
+      else {
+          jTextField42.setText("");
+          jTextField44.setText("");
+      }
+      
+      if(consulta[16]!=null){
+          jTextField45.setText(consulta[16].getNombre());
+          jTextField47.setText(String.valueOf(consulta[16].getId()));
+      }
+      else {
+          jTextField45.setText("");
+          jTextField47.setText("");
+      }
+      
+      if(consulta[17]!=null){
+          jTextField48.setText(consulta[17].getNombre());
+          jTextField50.setText(String.valueOf(consulta[17].getId()));
+      }
+      else {
+          jTextField48.setText("");
+          jTextField50.setText("");
+      }
+      
+      if(consulta[18]!=null){
+          jTextField51.setText(consulta[18].getNombre());
+          jTextField53.setText(String.valueOf(consulta[18].getId()));
+      }
+      else {
+          jTextField51.setText("");
+          jTextField53.setText("");
+      }
+      
+      if(consulta[19]!=null){
+          jTextField54.setText(consulta[19].getNombre());
+          jTextField56.setText(String.valueOf(consulta[19].getId()));
+      }
+      else {
+          jTextField54.setText("");
+          jTextField56.setText("");
+      }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -1589,11 +1841,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -1615,8 +1863,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
@@ -1637,8 +1883,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea10;
-    private javax.swing.JTextArea jTextArea11;
-    private javax.swing.JTextArea jTextArea12;
     private javax.swing.JTextArea jTextArea13;
     private javax.swing.JTextArea jTextArea14;
     private javax.swing.JTextArea jTextArea15;
@@ -1686,13 +1930,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
     private javax.swing.JTextField jTextField42;
     private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField44;
